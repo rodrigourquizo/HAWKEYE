@@ -1,0 +1,53 @@
+# VisDrone2019-DET dataset https://github.com/VisDrone/VisDrone-Dataset by Tianjin University
+# Documentation: https://docs.ultralytics.com/datasets/detect/visdrone/
+# Example usage: yolo train data=VisDrone.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── VisDrone  ← downloads here (2.3 GB)
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+# test: VisDrone2019-DET-test-dev/images # test images (optional)  1610 images
+
+path: '/content/gdrive/My Drive/PROYECTO_ELECTRÓNICO2/DATA_ONLY_PERSONS/' # dataset root dir
+train: VisDrone2019-DET-train/images # train images (relative to 'path')  6471(se disminuyo a solo personsas) images
+val: VisDrone2019-DET-val/images # val images (relative to 'path')  548(se disminuyo a solo personsas)  images
+
+
+# Classes
+names:
+  0: person
+  
+  
+augment:
+# Hyperparameters ------------------------------------------------------------------------------------------------------
+# lr0: 0.01  # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+# lrf: 0.01  # final learning rate (lr0 * lrf)
+# momentum: 0.937  # SGD momentum/Adam beta1
+# weight_decay: 0.0005  # optimizer weight decay 5e-4
+# warmup_epochs: 3.0  # warmup epochs (fractions ok)
+# warmup_momentum: 0.8  # warmup initial momentum
+# warmup_bias_lr: 0.1  # warmup initial bias lr
+# box: 7.5  # box loss gain
+# cls: 0.5  # cls loss gain (scale with pixels)
+# dfl: 1.5  # dfl loss gain
+# pose: 12.0  # pose loss gain
+# kobj: 1.0  # keypoint obj loss gain
+# label_smoothing: 0.0  # label smoothing (fraction)
+# nbs: 64  # nominal batch size
+# hsv_h: 0.015  # image HSV-Hue augmentation (fraction)
+# hsv_s: 0.7  # image HSV-Saturation augmentation (fraction)
+# hsv_v: 0.4  # image HSV-Value augmentation (fraction)
+# degrees: 0.0  # image rotation (+/- deg)
+hsv_h: 0.015       # Ajuste del tono
+hsv_s: 0.7        # Ajuste de la saturación
+hsv_v: 0.4         # Ajuste del valor (brillo)
+degrees: 10.0      # Rotaciones de hasta 10 grados
+translate: 0.1     # Translaciones de hasta el 10% de la imagen
+scale: 0.1         # Escala de imágenes
+shear: 0.0         # No se usa cizallamiento
+perspective: 0.1 # Transformaciones de perspectiva
+flipud: 0.5        # Probabilidad del 50% de voltear verticalmente
+erasing: 0.4       # Borrado aleatorio del 40%
+crop_fraction: 0  # No se usa recorte
+# copy_paste: 0.0  # segment copy-paste (probability)

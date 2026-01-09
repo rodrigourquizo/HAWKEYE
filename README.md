@@ -1,17 +1,48 @@
-# Autonomous Drone and AI Surveillance System for Archaeological Site Preservation
-This project was developed for the Proyecto Electronico course at PUCP
+# HAWKEYE 🦅
 
-📍 **Use case:** Surveillance of *Huaca* sites in Peru to detect and track people entering restricted areas.
+**AI Surveillance System for Person Detection Using Drones**
 
-## 🧠 Key Features
+This project restores key functionality for person detection using modern Deep Learning models (YOLOv8) and real-time Telegram alert integration.
 
-- 🎥 **Live Video Detection** using YOLOv8 (Ultralytics)  
-- 🤖 **Object tracking** with unique ID assignment  
-- 🟪 **Region-of-interest monitoring** to define restricted zones  
-- 🔔 **Real-time alerts via Telegram bot** when a person is detected in a protected area  
-- 🚁 Ready to be integrated with autonomous drones for aerial patrol
+## 🌟 Key Features
 
-<p align="center">
-  <img src="https://github.com/rodrigourquizo/Autonomous-Surveillance-with-drone/blob/main/app.jpg" alt="Drone Surveillance App" width="760"/>
-</p>
+*   **Person Detection**: Uses the YOLOv8 model for fast and precise inference.
+*   **Interest Zone Segmentation**: Automatic detection of the "Huaca Zone" (purple color) to filter alerts.
+*   **Instant Alerts**: Integration with Telegram Bot to notify of intrusions in the protected zone.
+*   **Modern Web Interface**: Visual dashboard developed with Flask for real-time monitoring.
 
+## 📸 Web Dashboard
+
+![User Interface](static/img/app.jpg)
+
+*Above: Dashboard View (Illustrative)*
+
+## ️ Installation and Usage
+
+1.  **Requirements**: Python 3.8+
+2.  **Install dependencies**:
+    ```bash
+    pip install flask ultralytics opencv-python requests
+    ```
+3.  **Configuration**:
+    *   Open `src/camera.py` and configure `YOUR_TELEGRAM_TOKEN` and `YOUR_CHAT_ID`. (Note: File structure was refactored)
+    *   Ensure a webcam is connected (or modify `0` to the video path).
+4.  **Execution**:
+    ```bash
+    python app.py
+    ```
+5.  **Access**:
+    *   Navigate to `http://localhost:5000` in your browser.
+
+## 📂 Project Structure
+
+*   `app.py`: Flask Web Server.
+*   `src/camera.py`: Main video logic and orchestration.
+*   `src/detector.py`: YOLOv8 inference module.
+*   `src/segmenter.py`: Computer vision algorithm to detect the purple zone.
+*   `src/telegram_bot.py`: Messaging service.
+*   `templates/`: HTML files for the interface.
+*   `config/`: Configuration files.
+*   `static/`: Assets and images.
+
+---
