@@ -2,7 +2,7 @@
 
 **AI Surveillance System for Person Detection Using Drones**
 
-This project restores key functionality for person detection using modern Deep Learning models (YOLOv8) and real-time Telegram alert integration.
+This system performs person detection using the YOLOv8 deep learning model and provides real-time alerts via Telegram.
 
 ## 🌟 Key Features
 
@@ -31,8 +31,6 @@ This project restores key functionality for person detection using modern Deep L
     ```bash
     python app.py
     ```
-5.  **Access**:
-    *   Navigate to `http://localhost:5000` in your browser.
 
 ## 📂 Project Structure
 
